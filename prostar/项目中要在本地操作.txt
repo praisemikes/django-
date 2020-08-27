@@ -1,0 +1,31 @@
+1.为前端和后端分别设置两个不同的域名（？）
+编辑/etc/hosts文件，可以设置本地域名
+
+sudo vim /etc/hosts
+在文件中增加两条信息
+
+127.0.0.1   api.myuxi.com
+127.0.0.1   m.myuxi.com
+
+2.跨域CORS
+pip install django-cors-headers
+在setting中添加应用
+INSTALLED_APPS = (
+    ...
+    'corsheaders',
+    ...
+)
+还有中间层设置，添加白名单等
+
+
+1.3.12xadmin
+通过如下命令安装xadmin的最新版
+pip install xadmin2
+
+创建超级管理员的命令如下，按提示输入用户名、邮箱、密码。
+python manage.py createsuperuser
+
+配置全局set，model,保存对象方法重写
+
+导出到xls（excel) 需要安装xlwt扩展
+pip install xlwt
