@@ -1,0 +1,47 @@
+在ubantu检查pycharm是否在有效期，过期的激活或者破解
+
+1.虚拟环境，之前已经有了，新建环境
+mkvirtualenv -p python3 --no-setuptools py3_djgo
+更新pip
+
+其它几个环境可以删除
+
+
+2.安装Django
+配置国内镜像源
+# ~/.pip/pip.conf
+
+cat pip.conf
+
+[global]
+
+index-url = https://pypi.douban.com/simple
+
+pip install django==2.2.14
+修改base/mysql的2个bug
+
+3.安装nginx
+sudo apt-get install nginx
+sudo nginx -t
+
+将前端文件放进www后，重启Nginx
+sudo service nginx restart
+
+4.检查数据库sql 和redis是否正常
+
+5.创建工程和数据库,基本上复制老师的代码
+
+6.配置项目下各个文件
+需要安装的包
+pip pymysql
+pip install django-redis
+pip install djangorestframework
+
+总是遇到no module name “django.core.wsgi”,等问题时wigi.py文件中加入了
+sys.path.append('你的django项目路径')
+
+sys.path.append('python的site-packages路径')
+
+用户部分
+1.安装阿里短信服务，也可以申请其他短信服务
+pip install aliyun-python-sdk-core-v3
